@@ -30,22 +30,23 @@ int main()
    scanf("%s",d);
    for(i=1;i<n;i+=2)
    {
-     if(strcmp(a[i],d)==0)
+     if(strcmp(b[i],d)==0)
      {
+     // printf("%s",a[i]);
      break;
      }
    }
     j=i;
-    for(i=1;i<n;i+=2)
+    for(i=2;i<n;i+=2)
     {
-       if(strcmp(b[j],a[i])==0)
+       if(strcmp(b[i],a[j])==0)
        {
-	 printf("%s %s",b[j],a[i]);
+	// printf("%s %s",b[j],a[i]);
 	 c++;
        }
      }
 
-     printf("%d",c);
+   printf("%d",c);
    getch();
    return 0;
  }
