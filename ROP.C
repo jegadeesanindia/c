@@ -3,8 +3,16 @@
 #include<limits.h>
 int min(int t[],int n)
 {
-  int i,mi=INT_MIN;
-  for(i=0;i<n;i++
+  int i,mi=INT_MAX;
+  for(i=0;i<n;i++)
+  {
+     if(mi>t[i])
+     {
+     mi=t[i];
+     }
+  }
+  return mi;
+}
 
 int  main()
 {
