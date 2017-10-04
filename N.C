@@ -1,34 +1,50 @@
 #include<stdio.h>
 #include<conio.h>
-void main()
+int main()
 {
-int i,j,k,n;char a[100][100],str[100];int flag=1;
-clrscr();
+ int a[100],n,i,j,k,m=0,b[100]={0},max;
  scanf("%d",&n);
-scanf("%s",str);
- k=0;
  for(i=0;i<n;i++)
  {
-   for(j=0;j<n;j++,k++)
-   {
-    a[i][j]=str[k];
-    }
- }
- j=0;
- for(i=0;i<n-1;i++,j++)
- {
-   for(k=j+1;k<n;k++)
-   { printf("%c %c\t",a[k][j],a[j][k]);
-      if((a[k][j]!=a[j][k])&&((a[k][j]!=' ')||(a[j][k]!=' ')))
+  scanf("%d",&a[i]);
+  }
+  for(i=0;i<n;i++)
+  {
+    for(j=i+1;j<n;j++)
+    {
+      if(a[i]<a[j])
       {
-       flag=0;
-       }
-   }
- }
- if(flag==0)
- printf("NO");
- else
- printf("Yes");
- getch();
- return 0;
- }
+	  m++;
+      }
+    }
+    a[i]=m;
+  }
+  max=a[i];
+  for(i=1;i<n;i++)
+  {
+    if(max<a[i])
+    {
+    max=a[i];
+    }
+  }
+  for(i=0;i<n;i++)
+  {
+    if(max==a[i])
+    { k=i;
+    }
+  }
+  printf("%d",a[k]);
+  for(i=k;i<n;i++)
+  {
+  for(j=i+1;j<n;j++)
+  {
+    if(a[i]<a[j])
+    {
+    printf("%d",a[j]);
+    }
+  }
+  break;
+  }
+  getch();
+  return 0;
+}
